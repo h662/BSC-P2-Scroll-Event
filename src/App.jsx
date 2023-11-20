@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import A from "./components/A";
 import B from "./components/B";
@@ -7,8 +7,14 @@ import D from "./components/D";
 import Header from "./components/Header";
 
 const App = () => {
+  const [isHidden, setIsHidden] = useState(false);
+
   const scrollEvent = () => {
-    console.log(window.scrollY);
+    if (window.scrollY > 1000) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
   };
 
   useEffect(() => {
@@ -21,7 +27,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header isHidden={isHidden} />
       <A />
       <B />
       <C />
