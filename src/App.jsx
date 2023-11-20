@@ -1,5 +1,21 @@
+import { useEffect, useRef } from "react";
+
+import A from "./components/A";
+import B from "./components/B";
+import C from "./components/C";
+import D from "./components/D";
+import Header from "./components/Header";
+
 const App = () => {
-  return <div className="bg-red-100">Hello, React!</div>;
+  return (
+    <>
+      <Header />
+      <A />
+      <B />
+      <C />
+      <D />
+    </>
+  );
 };
 
 export default App;
